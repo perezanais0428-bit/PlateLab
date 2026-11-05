@@ -227,21 +227,15 @@ if uploaded_file is not None:
             buffer, engine="openpyxl"
         ) as writer:
 
-            raw_df.to_excel(
-                writer, "Raw Ct Data", index=False
-            )
+           raw_df.to_excel(
+    writer, sheet_name="Raw Ct Data", index=False
+)
 
-            average_df.to_excel(
-                writer, "Average Ct", index=False
-            )
+      average_df.to_excel(writer, sheet_name="Average Ct", index=False)
 
-            normalized_df.to_excel(
-                writer, "Full Analysis", index=False
-            )
+           normalized_df.to_excel(writer, sheet_name="Full Analysis", index=False)
 
-            summary_df.to_excel(
-                writer, "Results Summary", index=False
-            )
+            summary_df.to_excel(writer, sheet_name="Results Summary", index=False)
 
             # Style all sheets
             for sheet in writer.sheets.values():
